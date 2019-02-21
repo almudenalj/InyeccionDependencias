@@ -1,0 +1,41 @@
+﻿@model IEnumerable<InyecciónDependenciasHipica.Models.Caballo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNivel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCaballo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdNivel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCaballo)
+        </td>
+        <td>
+            <img src="~/img/@Html.DisplayFor(modelItem => item.Foto)" style="width:100px;height:100px"> 
+        </td>
+       
+    </tr>
+}
+
+</table>
